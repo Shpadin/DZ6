@@ -27,7 +27,7 @@ void Task41()
     {
         Console.WriteLine($"Введите эемент: {i + 1}: ");
         array[i] = Convert.ToInt32(Console.ReadLine());
-        if (array[i]>0) numbers+=1;
+        if (array[i] > 0) numbers += 1;
     }
     Console.WriteLine($"Количество чисел болеше 0 равно {numbers}");
 }
@@ -35,5 +35,23 @@ void Task41()
 void Task43()
 {
     Console.WriteLine("Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.");
+    int inputCoefficients()
+    {
+        Console.WriteLine("Введите значения b1, k1, b2 и k2:");
+        int Coefficients = int.Parse(Console.ReadLine());
+        return Coefficients;
+    }
+    int b1 = inputCoefficients();
+    int k1 = inputCoefficients();
+    int b2 = inputCoefficients();
+    int k2 = inputCoefficients();
 
+    int x = 0;
+    int y = 0;
+
+    if (k1 == k2) Console.WriteLine("Точек пересечения нет, так как прямые паралельны");
+    else
+    {
+        Console.WriteLine($"Прямые пересекутся в точке ({x = (b2 - b1) / (k1 - k2)};{y = k1 * x + b1})");
+    }
 }

@@ -1,4 +1,4 @@
-﻿
+
 Console.WriteLine("Выберете задачу 41 / 43");
 int task = int.Parse(Console.ReadLine());
 
@@ -38,25 +38,20 @@ void Task43()
     int inputCoefficients()
     {
         Console.WriteLine("Введите значения b1, k1, b2 и k2:");
-        int Coefficients = Convert.ToDouble(Console.ReadLine());
+        int Coefficients = int.Parse(Console.ReadLine());
         return Coefficients;
     }
-    double b1 = inputCoefficients();
-    double k1 = inputCoefficients();
-    double b2 = inputCoefficients();
-    double k2 = inputCoefficients();
+    int b1 = inputCoefficients();
+    int k1 = inputCoefficients();
+    int b2 = inputCoefficients();
+    int k2 = inputCoefficients();
 
+    int x = 0;
+    int y = 0;
 
-       double x = (b2 - b1) / (k1 - k2);
-       double y = k1 * x + b1;
-        Console.WriteLine();
-        Console.WriteLine(x); 
-        Console.WriteLine(x);
-
-        Console.WriteLine($"Прямые пересекутся в точке ({x};{y})");
-    
-        if (k1 == k2) 
+    if (k1 == k2) Console.WriteLine("Точек пересечения нет, так как прямые паралельны");
+    else
     {
-        Console.WriteLine("Точек пересечения нет, так как прямые паралельны");
+        Console.WriteLine($"Прямые пересекутся в точке ({x = (b2 - b1) / (k1 - k2)};{y = k1 * x + b1})");
     }
 }
